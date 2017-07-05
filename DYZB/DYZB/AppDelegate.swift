@@ -13,12 +13,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var allowRotation = 0
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         UITabBar.appearance().tintColor = UIColor.orange
         
         return true
+    }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask{
+        if allowRotation == 1 {
+            return [.landscapeRight,.portrait]
+        }else {
+            return .portrait
+        }
     }
     
 }

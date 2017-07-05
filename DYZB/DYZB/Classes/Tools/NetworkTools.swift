@@ -25,7 +25,7 @@ class NetworkTools {
             
             // 3.获取结果
             guard let result = response.result.value else {
-                print(response.result.error)
+                print(response.result.error ?? "")
                 return
             }
             
